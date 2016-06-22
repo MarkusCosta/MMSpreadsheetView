@@ -964,10 +964,14 @@ const static NSUInteger MMScrollIndicatorTag = 12345;
 }
 
 - (void)scrollToFrontAnimated:(BOOL) animated {
-    [self.upperLeftCollectionView setContentOffset:CGPointMake(self.upperLeftCollectionView.contentSize.width, self.upperLeftCollectionView.contentOffset.y) animated:animated];
-    [self.upperRightCollectionView setContentOffset:CGPointMake(self.upperRightCollectionView.contentSize.width, self.upperRightCollectionView.contentOffset.y) animated:animated];
-    [self.lowerLeftCollectionView setContentOffset:CGPointMake(self.lowerLeftCollectionView.contentSize.width, self.lowerLeftCollectionView.contentOffset.y) animated:animated];
-    [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentSize.width, self.lowerRightCollectionView.contentOffset.y) animated:animated];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.upperLeftCollectionView setContentOffset:CGPointMake(self.upperLeftCollectionView.contentSize.width, self.upperLeftCollectionView.contentOffset.y) animated:animated];
+        [self.upperRightCollectionView setContentOffset:CGPointMake(self.upperRightCollectionView.contentSize.width, self.upperRightCollectionView.contentOffset.y) animated:animated];
+        [self.lowerLeftCollectionView setContentOffset:CGPointMake(self.lowerLeftCollectionView.contentSize.width, self.lowerLeftCollectionView.contentOffset.y) animated:animated];
+        [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentSize.width, self.lowerRightCollectionView.contentOffset.y) animated:animated];
+        [self invalidateIntrinsicContentSize];
+        [self layoutIfNeeded];
+    }];
 }
 
 - (void)scrollToBackAnimated:(BOOL) animated {
