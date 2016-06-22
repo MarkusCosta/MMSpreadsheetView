@@ -971,7 +971,7 @@ const static NSUInteger MMScrollIndicatorTag = 12345;
     //        [self.lowerLeftCollectionView setContentOffset:CGPointMake(self.lowerLeftCollectionView.contentSize.width, self.lowerLeftCollectionView.contentOffset.y) animated:animated];
             [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentSize.width, self.lowerRightCollectionView.contentOffset.y) animated:animated];
             [self invalidateIntrinsicContentSize];
-            [self layoutIfNeeded];
+//            [self layoutIfNeeded];
         }];
     }
 }
