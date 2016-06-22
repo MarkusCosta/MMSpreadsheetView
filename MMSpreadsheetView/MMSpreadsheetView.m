@@ -963,4 +963,34 @@ const static NSUInteger MMScrollIndicatorTag = 12345;
     }
 }
 
+- (void)scrollToFrontAnimated:(BOOL) animated {
+    [self.upperLeftCollectionView setContentOffset:CGPointMake(self.upperLeftCollectionView.contentSize.width, self.upperLeftCollectionView.contentOffset.y) animated:animated];
+    [self.upperRightCollectionView setContentOffset:CGPointMake(self.upperRightCollectionView.contentSize.width, self.upperRightCollectionView.contentOffset.y) animated:animated];
+    [self.lowerLeftCollectionView setContentOffset:CGPointMake(self.lowerLeftCollectionView.contentSize.width, self.lowerLeftCollectionView.contentOffset.y) animated:animated];
+    [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentSize.width, self.lowerRightCollectionView.contentOffset.y) animated:animated];
+}
+
+- (void)scrollToBackAnimated:(BOOL) animated {
+    [self.upperLeftCollectionView setContentOffset:CGPointMake(0, self.upperLeftCollectionView.contentOffset.y) animated:animated];
+    [self.upperRightCollectionView setContentOffset:CGPointMake(0, self.upperRightCollectionView.contentOffset.y) animated:animated];
+    [self.lowerLeftCollectionView setContentOffset:CGPointMake(0, self.lowerLeftCollectionView.contentOffset.y) animated:animated];
+    [self.lowerRightCollectionView setContentOffset:CGPointMake(0, self.lowerRightCollectionView.contentOffset.y) animated:animated];
+}
+
+- (void)scrollToTopAnimated:(BOOL) animated {
+    [self.upperLeftCollectionView setContentOffset:CGPointMake(self.upperLeftCollectionView.contentOffset.x, 0) animated:animated];
+    [self.upperRightCollectionView setContentOffset:CGPointMake(self.upperRightCollectionView.contentOffset.x, 0) animated:animated];
+    [self.lowerLeftCollectionView setContentOffset:CGPointMake(self.lowerLeftCollectionView.contentOffset.x, 0) animated:animated];
+    [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentOffset.x, 0) animated:animated];
+}
+
+- (void)scrollToDownAnimated:(BOOL) animated {
+    [self.upperLeftCollectionView setContentOffset:CGPointMake(self.upperLeftCollectionView.contentOffset.x, self.upperLeftCollectionView.contentSize.height) animated:animated];
+    [self.upperRightCollectionView setContentOffset:CGPointMake(self.upperRightCollectionView.contentOffset.x, self.upperRightCollectionView.contentSize.height) animated:animated];
+    [self.lowerLeftCollectionView setContentOffset:CGPointMake(self.lowerLeftCollectionView.contentOffset.x, self.lowerLeftCollectionView.contentSize.height) animated:animated];
+    [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentOffset.x, self.lowerRightCollectionView.contentSize.height) animated:animated];
+}
+
+
+
 @end

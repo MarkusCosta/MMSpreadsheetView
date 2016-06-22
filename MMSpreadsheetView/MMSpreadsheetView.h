@@ -327,6 +327,11 @@
  */
 - (void)flashScrollIndicators;
 
+- (void)scrollToFrontAnimated:(BOOL) animated;
+- (void)scrollToBackAnimated:(BOOL) animated;
+- (void)scrollToTopAnimated:(BOOL) animated;
+- (void)scrollToDownAnimated:(BOOL) animated;
+
 ///---------------------------------------
 /// @name Scroll View Properties
 ///---------------------------------------
