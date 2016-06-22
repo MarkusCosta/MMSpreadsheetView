@@ -34,7 +34,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _cellSpacing = 1.0f;
+        _cellSpacing = 0.0f;
         _itemSize = CGSizeMake(120.0f, 120.0f);
     }
     return self;
