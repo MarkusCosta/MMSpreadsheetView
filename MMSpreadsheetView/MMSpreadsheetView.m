@@ -964,7 +964,7 @@ const static NSUInteger MMScrollIndicatorTag = 12345;
 }
 
 - (void)scrollToFrontAnimated:(BOOL) animated {
-    if(self.upperRightCollectionView.contentSize.width >= self.upperRightContainerView.frame.size.width) {
+    if(self.upperRightCollectionView.contentSize.width + 30 >= self.upperRightContainerView.frame.size.width) {
         [self.upperRightCollectionView setContentOffset:CGPointMake(self.upperRightCollectionView.contentSize.width, self.upperRightCollectionView.contentOffset.y) animated:animated];
         [self.lowerRightCollectionView setContentOffset:CGPointMake(self.lowerRightCollectionView.contentSize.width, self.lowerRightCollectionView.contentOffset.y) animated:animated];
 //        [UIView animateWithDuration:0.3 animations:^{
