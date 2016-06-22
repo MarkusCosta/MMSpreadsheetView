@@ -245,6 +245,7 @@
  
  */
 - (void)registerCellClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
+- (void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
 
 ///---------------------------------------
 /// @name Creating Spreadsheet View Cells

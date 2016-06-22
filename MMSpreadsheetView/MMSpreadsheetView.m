@@ -132,6 +132,13 @@ const static NSUInteger MMScrollIndicatorTag = 12345;
     [self.lowerRightCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
 }
 
+-(void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier {
+    [self.upperLeftCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    [self.upperRightCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    [self.lowerLeftCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    [self.lowerRightCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+}
+
 - (void)deselectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
     NSIndexPath *collectionViewIndexPath = [self collectionViewIndexPathFromDataSourceIndexPath:indexPath];
     UICollectionView *collectionView = [self collectionViewForDataSourceIndexPath:indexPath];
